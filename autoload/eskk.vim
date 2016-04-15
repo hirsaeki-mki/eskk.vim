@@ -1533,8 +1533,13 @@ function! eskk#_initialize() "{{{
 
     EskkMap -type=mode:hira:toggle-hankata <C-q>
     EskkMap -type=mode:hira:ctrl-q-key <C-q>
-    EskkMap -type=mode:hira:toggle-kata q
-    EskkMap -type=mode:hira:q-key q
+    if g:azik
+        EskkMap -type=mode:hira:toggle-kata @
+        EskkMap -type=mode:hira:q-key @
+    else
+        EskkMap -type=mode:hira:toggle-kata q
+        EskkMap -type=mode:hira:q-key q
+    endif
     EskkMap -type=mode:hira:l-key l
     EskkMap -type=mode:hira:to-ascii l
     EskkMap -type=mode:hira:to-zenei L
@@ -1542,8 +1547,13 @@ function! eskk#_initialize() "{{{
 
     EskkMap -type=mode:kata:toggle-hankata <C-q>
     EskkMap -type=mode:kata:ctrl-q-key <C-q>
-    EskkMap -type=mode:kata:toggle-kata q
-    EskkMap -type=mode:kata:q-key q
+    if g:azik
+        EskkMap -type=mode:kata:toggle-kata @
+        EskkMap -type=mode:kata:q-key @
+    else
+        EskkMap -type=mode:kata:toggle-kata q
+        EskkMap -type=mode:kata:q-key q
+    endif
     EskkMap -type=mode:kata:l-key l
     EskkMap -type=mode:kata:to-ascii l
     EskkMap -type=mode:kata:to-zenei L
